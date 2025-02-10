@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffccd5;
+    margin: 0;
+    overflow: hidden;
+    /* Prevents scrollbars when hearts/flowers float */
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    animation: bounceIn 0.6s ease-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#noButton {
+    background-color: #ff4d4d;
+}
+
+#yesButton {
+    background-color: #4dff4d;
+}
+
+
+/* Fade-in effect for the buttons */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Bounce-in effect when the page loads */
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Floating hearts and flowers animation */
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-500px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* Hidden elements */
+
+.hidden {
+    display: none;
+}
+
+
+/* Style for the floating hearts and flowers */
+
+.floating-heart,
+.floating-flower {
+    position: absolute;
+    bottom: 20px;
+    animation: floatUp 3s ease-in forwards;
+}
+
+.floating-heart {
+    font-size: 30px;
+    color: red;
+    z-index: 1000;
+}
+
+.floating-flower {
+    font-size: 40px;
+    color: pink;
+    z-index: 1000;
+}
+
+.flower {
+    font-size: 40px;
+    color: #FF99FF;
+}
